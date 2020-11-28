@@ -36,9 +36,10 @@
       > :last-child {
         > div {
           > p {
+            padding-bottom: 5px;
             font-size: 14px;
-            letter-spacing: 0.5px;
-            line-height: 20px;
+            letter-spacing: 0.8px;
+            line-height: 21px;
           }
         }
       }
