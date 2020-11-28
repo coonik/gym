@@ -38,6 +38,9 @@
         }
       }
       > :last-child {
+        height: 120px;
+        box-sizing: border-box;
+        overflow-y: auto;
         > div {
           > p {
             font-size: 14px;
