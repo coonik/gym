@@ -1,12 +1,15 @@
+import { FooterComponent } from './../footer/footer.component';
 import { HeaderComponent } from './header.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 const modules = [
+  
   ];
   const components = [
-      HeaderComponent
+      HeaderComponent,
+      FooterComponent
   ];
 
 @NgModule({
@@ -15,7 +18,8 @@ const modules = [
   ],
   imports: [
     ...modules,
-    FlexLayoutModule
+    FlexLayoutModule,
+    CollapseModule
   ],
   exports: [
     ...components,

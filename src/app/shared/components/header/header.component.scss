@@ -1,12 +1,4 @@
-$green: #91d36b;
-$orange: #fc9b1b;
-$lightGrey: #999;
-$grey: #444;
-$darkGrey: #333;
 .container-header {
-  > div {
-    padding: 10px 10vw;
-  }
   .header-info-top {
     margin-bottom: 1px;
     padding: 5px 10vw;
@@ -15,87 +7,94 @@ $darkGrey: #333;
   }
 
   .header-main {
-    > :nth-child(2) {
-      > input {
-        padding: 5px;
-        border: 1px solid #e67e22;
-        outline-color: #d35400;
-        width: 20vw;
-        margin-right: 0.8px;
-        border-radius: 5px;
-      }
-
-      > button {
-        padding: 7px 10px;
-        color: white;
-        background: #f39c12;
-        border: none;
-        border-radius: 5px;
+    padding: 0 12vw;
+    > :first-child {
+      > img {
+        width: 350px;
       }
     }
-
-    > :nth-child(3) {
+    > :last-child {
       > :first-child {
-        margin-right: 10px;
+        > input {
+          padding: 5px;
+          border: 1px solid #e67e22;
+          outline-color: #d35400;
+          width: 20vw;
+          margin-right: 0.8px;
+          border-radius: 5px;
+        }
+
+        > button {
+          padding: 7px 10px;
+          color: white;
+          background: #f39c12;
+          border: none;
+          border-radius: 5px;
+        }
+      }
+
+      > :last-child {
+        > :first-child {
+          margin: 0 10px 0 2vw;
+        }
+        > :last-child {
+          > p {
+            color: #7f8c8d;
+            font-weight: 600;
+          }
+          > h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f39c12;
+          }
+        }
       }
     }
   }
 
   .header-nav {
     background: #ecf0f1;
-
-    > a {
-      position: relative;
-      padding: 5px 20px;
-
-      color: #7f8c8d;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    > a:hover {
-      color: #e67e22;
-    }
-
-    > a::after {
-      position: absolute;
-      content: "";
-      height: 2px;
-      bottom: -4px;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      width: 50%;
-      background: green;
-
-      /* optional animation */
-      -o-transition: 0.5s;
-      -ms-transition: 0.5s;
-      -moz-transition: 0.5s;
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
-    }
-
-    > a:hover:after {
-      width: 80%;
-      background: #f1c40f;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    padding: 0 8vw;
 
     .menu {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 95%;
       margin: 0 auto;
-      font-family: "Orbitron", sans-serif;
+
+      > ol {
+        > :first-child {
+          width: 2vw;
+          align-self: center;
+          text-align: center;
+
+          &::after {
+            display: none;
+          }
+        }
+        > li {
+          cursor: pointer;
+          padding: 10px 0;
+          width: 10vw;
+
+          > a {
+            position: relative;
+            color: #7f8c8d;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+          }
+          &:hover {
+            > a {
+              color: #e67e22;
+              font-size: 13px;
+            }
+          }
+        }
+      }
     }
 
     ol {
@@ -105,27 +104,52 @@ $darkGrey: #333;
       justify-content: center;
       width: 100%;
       margin: 0 auto;
-      padding: 0.5em 0;
       list-style: none;
+
+      > li {
+        &::after {
+          position: absolute;
+          content: "";
+          height: 2px;
+          bottom: 0;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          width: 50%;
+          background: #2ecc71;
+
+          /* optional animation */
+          -o-transition: 0.5s;
+          -ms-transition: 0.5s;
+          -moz-transition: 0.5s;
+          -webkit-transition: 0.5s;
+          transition: 0.5s;
+        }
+
+        &:hover:after {
+          left: 0;
+          width: 100%;
+          background: #f1c40f;
+        }
+      }
     }
 
     .menu-item {
-      background: $grey;
-      padding: 1em 0.5em;
       position: relative;
-      border-bottom: 5px solid $lightGrey;
-      margin: 0 0.1em;
-      transition: border-bottom 0.23s ease-in-out, background 0.23s linear;
-      cursor: pointer;
       min-width: 8em;
       text-align: center;
       &[aria-haspopup="true"] {
-        border-bottom-color: $orange;
+        &::after {
+          background: #e74c3c;
+        }
+
+        &:hover::after {
+          left: -25%;
+          width: 150%;
+        }
       }
       &:hover,
       &:focus-within {
-        border-bottom-color: $green;
-        background: $darkGrey;
         .sub-menu,
         .sub-menu:hover {
           visibility: visible;
@@ -135,29 +159,48 @@ $darkGrey: #333;
       }
 
       .sub-menu {
-        flex-direction: column;
-        align-items: flex-start;
+        box-sizing: border-box;
         position: absolute;
-        left: 0;
-        margin-top: 1em;
+        left: -25%;
+        padding: 0;
+        width: 150%;
+        top: 70px;
         visibility: hidden;
         display: none;
         opacity: 0;
+        background-image: linear-gradient(to right, orange, white);
         .menu-item {
-          margin: 0.1em 0;
-          padding: 1em;
-          width: 10em;
+          margin-top: 14px;
+          padding: 2px 10px;
+          width: 12em;
           text-align: center;
           z-index: 2;
-        }
-      }
 
-      a {
-        color: #fff;
-        text-decoration: none;
-        text-transform: uppercase;
-        &:focus {
-          outline: none;
+          &::after {
+            background: white;
+            bottom: -5px;
+          }
+
+          &:hover {
+            &::after {
+              background: #2ecc71;
+            }
+
+            > a {
+              color: #2ecc71;
+              font-size: 16px;
+            }
+          }
+
+          > a {
+            color: #7f8c8d;
+            font-size: 14px;
+            text-decoration: none;
+          }
+
+          &:last-child {
+            margin-bottom: 16px;
+          }
         }
       }
     }
