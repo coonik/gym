@@ -7,4 +7,9 @@
   > div {
     flex: 1;
   }
+
+  > app-footer {
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 }

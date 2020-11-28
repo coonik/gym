@@ -1,8 +1,10 @@
+@import "/src/assets/variable.scss";
+
 .container-header {
   .header-info-top {
     margin-bottom: 1px;
     padding: 5px 10vw;
-    background: #ecf0f1;
+    background: $color-clouds;
     box-shadow: rgba(0, 0, 0, 0.59) 0px 1px 0.5px 0px;
   }
 
@@ -17,8 +19,8 @@
       > :first-child {
         > input {
           padding: 5px;
-          border: 1px solid #e67e22;
-          outline-color: #d35400;
+          border: 1px solid $color-carrot;
+          outline-color: $color-pumpkin;
           width: 20vw;
           margin-right: 0.8px;
           border-radius: 5px;
@@ -27,7 +29,7 @@
         > button {
           padding: 7px 10px;
           color: white;
-          background: #f39c12;
+          background: $color-orange;
           border: none;
           border-radius: 5px;
         }
@@ -39,13 +41,13 @@
         }
         > :last-child {
           > p {
-            color: #7f8c8d;
+            color: $color-asbestos;
             font-weight: 600;
           }
           > h1 {
             font-size: 24px;
             font-weight: 700;
-            color: #f39c12;
+            color: $color-orange;
           }
         }
       }
@@ -53,7 +55,7 @@
   }
 
   .header-nav {
-    background: #ecf0f1;
+    background: $color-clouds;
     padding: 0 8vw;
 
     .menu {
@@ -79,7 +81,7 @@
 
           > a {
             position: relative;
-            color: #7f8c8d;
+            color: $color-asbestos;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -89,7 +91,7 @@
           }
           &:hover {
             > a {
-              color: #e67e22;
+              color: $color-carrot;
               font-size: 13px;
             }
           }
@@ -129,7 +131,7 @@
         &:hover:after {
           left: 0;
           width: 100%;
-          background: #f1c40f;
+          background: $color-sun-flower;
         }
       }
     }
@@ -159,6 +161,7 @@
       }
 
       .sub-menu {
+        z-index: 3;
         box-sizing: border-box;
         position: absolute;
         left: -25%;
@@ -193,7 +196,7 @@
           }
 
           > a {
-            color: #7f8c8d;
+            color: $color-asbestos;
             font-size: 14px;
             text-decoration: none;
           }

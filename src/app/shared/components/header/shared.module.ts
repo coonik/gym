@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 
-const modules = [
-  
+const modules = [  
+    FlexLayoutModule,
+    CollapseModule
   ];
   const components = [
       HeaderComponent,
@@ -18,8 +19,6 @@ const modules = [
   ],
   imports: [
     ...modules,
-    FlexLayoutModule,
-    CollapseModule
   ],
   exports: [
     ...components,
