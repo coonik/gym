@@ -23,9 +23,10 @@
     class="header-main"
     fxLayout="row"
     fxLayout.lt-md="column"
+    fxLayout.lt-sm="row"
     fxLayoutAlign="space-between"
   >
-    <div fxFlex="35">
+    <div fxFlex="35" fxFlex.lt-sm="30">
       <img
         src="https://thientruongsport.com/template/images/logo.png"
         alt="company image"
@@ -33,19 +34,22 @@
     </div>
     <div
       fxFlex="60"
+      fxFlex.lt-sm="70"
       fxLayout="row"
-      fxLayout.lt-sm="column-reverse"
+      fxLayout.lt-sm="column"
       fxLayoutAlign="end center"
       fxLayoutAlign.lt-md="center"
+      fxLayoutAlign.lt-sm="stretch"
     >
       <div
         fxFlex="55"
+        fxFlex.lt-sm="100"
         fxLayout="row"
         fxLayoutAlign="end center"
         fxLayoutAlign.lt-md="center center"
       >
-        <input type="text" fxFlex="75" fxFlex.lt-md="60" />
-        <button fxFlex="25" fxFlex.lt-md="15">
+        <input type="text" fxFlex="75" fxFlex.lt-md="60" fxFlex.lt-sm="80" />
+        <button fxFlex="25" fxFlex.lt-md="20">
           <i class="las la-search"></i>
           <span> Tìm kiếm </span>
         </button>
@@ -55,6 +59,7 @@
         fxLayout="row"
         fxLayoutAlign="start center"
         fxLayoutAlign.lt-md="center center"
+        fxHide.lt-sm
       >
         <div>
           <img
