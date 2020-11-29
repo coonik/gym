@@ -44,8 +44,8 @@
         fxLayoutAlign="end center"
         fxLayoutAlign.lt-md="center center"
       >
-        <input type="text" fxFlex="75" />
-        <button fxFlex="25">
+        <input type="text" fxFlex="75" fxFlex.lt-md="60" />
+        <button fxFlex="25" fxFlex.lt-md="15">
           <i class="las la-search"></i>
           <span> Tìm kiếm </span>
         </button>
@@ -63,19 +63,19 @@
           />
         </div>
         <div>
-          <p class="text-left none-margin">Hotline:</p>
+          <p class="none-margin">Hotline:</p>
           <h1>0936.442.909</h1>
         </div>
       </div>
     </div>
   </div>
-  <div class="header-nav">
+  <div class="header-nav" fxHide.lt-md>
     <nav class="menu" role="navigation">
-      <ol fxLayout="row" fxLayoutAlign="space-between">
-        <li>
+      <ol fxLayout="row" fxLayoutGap="1vw" fxLayoutGap.lt-lg="0.25vw">
+        <li fxFlex="4">
           <a href="#0"><i class="las la-home la-2x"></i></a>
         </li>
-        <li class="menu-item" aria-haspopup="true">
+        <li fxFlex="auto" class="menu-item" aria-haspopup="true">
           <a href="#0"
             >Dụng cụ thể thao <br />
             ngoài trời <i class="las la-angle-down la-sm"></i
@@ -94,7 +94,7 @@
             <li class="menu-item"><a href="#0">Trụ bóng rổ</a></li>
           </ol>
         </li>
-        <li class="menu-item" aria-haspopup="true">
+        <li fxFlex="auto" class="menu-item" aria-haspopup="true">
           <a href="#0"
             >Dụng cụ trẻ em <br />
             ngoài trời <i class="las la-angle-down la-sm"></i
@@ -115,7 +115,7 @@
           </ol>
         </li>
 
-        <li class="menu-item" aria-haspopup="true">
+        <li fxFlex="auto" class="menu-item" aria-haspopup="true">
           <a href="#0"
             >Thiết bị phòng gym <br />
             gia đình <i class="las la-angle-down la-sm"></i
@@ -129,7 +129,7 @@
           </ol>
         </li>
 
-        <li class="menu-item" aria-haspopup="true">
+        <li fxFlex="auto" class="menu-item" aria-haspopup="true">
           <a href="#0"
             >Thiết bị phòng gym <br />
             MBH Fitness <i class="las la-angle-down la-sm"></i
@@ -161,7 +161,7 @@
           </ol>
         </li>
 
-        <li class="menu-item" aria-haspopup="true">
+        <li fxFlex="auto" class="menu-item" aria-haspopup="true">
           <a href="#0"
             >Thiết bị phòng gym <br />
             IMPULSE Fitness <i class="las la-angle-down la-sm"></i
@@ -174,13 +174,13 @@
           </ol>
         </li>
 
-        <li class="menu-item">
+        <li fxFlex="auto" class="menu-item">
           <a href="#0"
             >Thiết bị phòng gym <br />
             Thiên Trường</a
           >
         </li>
-        <li class="menu-item">
+        <li fxFlex="auto" class="menu-item">
           <a href="#0"
             >Sản phẩm <br />
             massage</a
@@ -188,5 +188,43 @@
         </li>
       </ol>
     </nav>
+  </div>
+
+  <div
+    class="header-nav-mobile"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxHide.gt-md
+    fxHide.md
+  >
+    <div>
+      <a href="#0"><i class="las la-home la-2x"></i></a>
+    </div>
+    <div class="btn-group" dropdown>
+      <button
+        id="button-animated"
+        dropdownToggle
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        aria-controls="dropdown-animated"
+      >
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul
+        id="dropdown-animated"
+        *dropdownMenu
+        class="dropdown-menu"
+        role="menu"
+        aria-labelledby="button-animated"
+      >
+        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+        <li role="menuitem">
+          <a class="dropdown-item" href="#">Another action</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" href="#">Something else here</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
