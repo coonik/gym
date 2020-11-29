@@ -17,3 +17,18 @@
 .pointer {
   cursor: pointer;
 }
+
+.overflow-x-hidden {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+.overflow-hidden {
+  box-sizing: border-box;
+  overflow: hidden;
+}

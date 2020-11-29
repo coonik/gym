@@ -1,5 +1,11 @@
 <div class="header-container">
-  <div class="header-info-top" fxLayout="row" fxLayoutAlign="space-between">
+  <div
+    class="header-info-top"
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutAlign="space-between"
+    fxHide.lt-lg
+  >
     <div fxLayout="row" fxLayoutAlign="center center">
       <i class="las la-envelope la-lg"></i>
       &nbsp; info@thientruongsport.com
@@ -13,19 +19,43 @@
       <i class="lab la-facebook la-lg"></i>
     </div>
   </div>
-  <div class="header-main" fxLayout="row" fxLayoutAlign="space-between">
-    <div>
+  <div
+    class="header-main"
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutAlign="space-between"
+  >
+    <div fxFlex="35">
       <img
         src="https://thientruongsport.com/template/images/logo.png"
         alt="company image"
       />
     </div>
-    <div fxLayout="row">
-      <div fxLayout="row" fxLayoutAlign="right center">
-        <input type="text" />
-        <button>Tìm kiếm</button>
+    <div
+      fxFlex="60"
+      fxLayout="row"
+      fxLayout.lt-sm="column-reverse"
+      fxLayoutAlign="end center"
+      fxLayoutAlign.lt-md="center"
+    >
+      <div
+        fxFlex="55"
+        fxLayout="row"
+        fxLayoutAlign="end center"
+        fxLayoutAlign.lt-md="center center"
+      >
+        <input type="text" fxFlex="75" />
+        <button fxFlex="25">
+          <i class="las la-search"></i>
+          <span> Tìm kiếm </span>
+        </button>
       </div>
-      <div fxLayout="row" fxLayoutAlign="right center">
+      <div
+        fxFlex="45"
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        fxLayoutAlign.lt-md="center center"
+      >
         <div>
           <img
             src="https://thientruongsport.com/template/images/hotline.png"
@@ -33,7 +63,7 @@
           />
         </div>
         <div>
-          <p class="none-margin">Hotline:</p>
+          <p class="text-left none-margin">Hotline:</p>
           <h1>0936.442.909</h1>
         </div>
       </div>

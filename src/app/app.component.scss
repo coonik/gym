@@ -1,15 +1,12 @@
 .app-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   > div {
-    flex: 1;
-  }
-
-  > app-footer {
-    box-sizing: border-box;
-    overflow: hidden;
+    text-align: center;
+    > :nth-child(2) {
+      flex: 1;
+    }
   }
 }
