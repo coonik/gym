@@ -13,7 +13,6 @@
     > :first-child {
       > img {
         padding: 10px 0;
-        width: 90%;
       }
     }
     > :last-child {
@@ -118,7 +117,7 @@
           left: 0;
           right: 0;
           width: 50%;
-          background: #2ecc71;
+          background: $color-emerald;
 
           /* optional animation */
           -o-transition: 0.5s;
@@ -251,6 +250,12 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .header-main {
+    background-color: $color-clouds;
+    padding: 10px 5vw !important;
+  }
+}
 // @media (max-width: 690px)
 //   .menu
 //     width: 95%
