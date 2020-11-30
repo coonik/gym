@@ -2,8 +2,8 @@
 
 .home-container {
   > main {
-    height: 50vh;
     .about-us {
+      max-height: 50vh;
       padding: 2vh 2vw;
       box-sizing: border-box;
       overflow-y: scroll;
@@ -25,5 +25,11 @@
       width: 100%;
       height: 50vh;
     }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .about-us {
+    max-height: 40vh !important;
   }
 }

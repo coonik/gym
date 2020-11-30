@@ -27,8 +27,15 @@
     fxLayoutAlign="space-between"
   >
     <div fxFlex="35" fxFlex.lt-sm="30" fxHide.sm fxLayout="row">
-      <button fxFlex.lt-sm="30" fxHide.gt-sm>
-        <i class="las la-bars"></i>
+      <button
+        fxFlex.lt-sm="30"
+        fxHide.gt-sm
+        (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed"
+        aria-controls="navCollapse"
+      >
+        <i [hidden]="!isCollapsed" class="las la-bars color-emerald"></i>
+        <i [hidden]="isCollapsed" class="las la-times color-pomegranate"></i>
       </button>
       <img
         fxFlex="90"
@@ -79,10 +86,16 @@
       </div>
     </div>
   </div>
-  <div class="header-nav" fxHide.lt-sm>
+  <div
+    class="header-nav"
+    id="navCollapse"
+    [collapse]="isCollapsed"
+    [isAnimated]="true"
+  >
     <nav class="menu" role="navigation">
       <ol
         fxLayout="row"
+        fxLayout.lt-sm="column"
         fxLayoutGap="1vw"
         fxLayoutGap.lt-lg="0.25vw"
         fxLayoutGap.lt-md="0"
@@ -148,25 +161,6 @@
         >
           <a href="#0"
             >Thiết bị phòng gym <br />
-            gia đình <i class="las la-angle-down la-sm"></i
-          ></a>
-          <ol class="sub-menu" aria-label="submenu">
-            <li class="menu-item"><a href="#0">Xe đạp thể dục</a></li>
-            <li class="menu-item"><a href="#0">Máy chạy bộ</a></li>
-            <li class="menu-item"><a href="#0">Máy rung toàn thân</a></li>
-            <li class="menu-item"><a href="#0">Máy tập bụng</a></li>
-            <li class="menu-item"><a href="#0">Máy trượt tuyết</a></li>
-          </ol>
-        </li>
-
-        <li
-          fxFlex="auto"
-          fxFlex.lt-md="25"
-          class="menu-item"
-          aria-haspopup="true"
-        >
-          <a href="#0"
-            >Thiết bị phòng gym <br />
             MBH Fitness <i class="las la-angle-down la-sm"></i
           ></a>
           <ol class="sub-menu" aria-label="submenu">
@@ -193,6 +187,25 @@
             </li>
             <li class="menu-item"><a href="#0">Máy chạy bộ MBH Fitness</a></li>
             <li class="menu-item"><a href="#0">Xe đạp MHB Fitness</a></li>
+          </ol>
+        </li>
+
+        <li
+          fxFlex="auto"
+          fxFlex.lt-md="25"
+          class="menu-item"
+          aria-haspopup="true"
+        >
+          <a href="#0"
+            >Thiết bị phòng gym <br />
+            gia đình <i class="las la-angle-down la-sm"></i
+          ></a>
+          <ol class="sub-menu" aria-label="submenu">
+            <li class="menu-item"><a href="#0">Xe đạp thể dục</a></li>
+            <li class="menu-item"><a href="#0">Máy chạy bộ</a></li>
+            <li class="menu-item"><a href="#0">Máy rung toàn thân</a></li>
+            <li class="menu-item"><a href="#0">Máy tập bụng</a></li>
+            <li class="menu-item"><a href="#0">Máy trượt tuyết</a></li>
           </ol>
         </li>
 

@@ -34,10 +34,15 @@
         class="pointer"
       >
         <div [collapse]="!isCollapsed">
-          <p class="none-margin">
+          <p class="none-margin" fxHide.lt-md>
             <i class="las la-check"></i> Công ty TNHH SX TM DV TT Thiên Trường
             cung cấp chính sách bảo hành sản phẩm từ 12 đến 36 tháng tùy vào
             dòng sản phẩm...
+          </p>
+
+          <p class="none-margin" fxHide.md fxHide.lg-md>
+            <i class="las la-check"></i> Công ty TNHH SX TM DV TT Thiên Trường
+            cung cấp...
           </p>
 
           <span

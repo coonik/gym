@@ -52,3 +52,26 @@
     }
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  * {
+    margin-bottom: 0 !important;
+
+    h1 {
+      font-size: 16px !important;
+    }
+
+    p {
+      font-size: 13px !important;
+    }
+
+    .footer-main {
+      > div {
+        margin-bottom: 10px !important;
+      }
+      .rule > :last-child {
+        height: auto !important;
+      }
+    }
+  }
+}
