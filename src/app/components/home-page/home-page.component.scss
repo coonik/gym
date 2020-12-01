@@ -33,3 +33,11 @@
     max-height: 40vh !important;
   }
 }
+@media only screen and (max-width: 600px) {
+  .about-us {
+    max-height: 70vh !important;
+  }
+  .carousel-image {
+    max-height: 30vh !important;
+  }
+}

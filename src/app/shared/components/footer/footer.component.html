@@ -2,10 +2,10 @@
   <div
     class="footer-main"
     fxLayout="row"
-    fxLayout.lt-md="column"
+    fxLayout.lt-sm="column"
     fxLayoutAlign="space-between"
   >
-    <div fxFlex="25" class="contact">
+    <div fxFlex="25" fxFlex.lt-md="30" class="contact">
       <h1>Dụng cụ thể thao Thiên Thanh</h1>
       <ul>
         <li>
@@ -25,7 +25,7 @@
         </li>
       </ul>
     </div>
-    <div fxFlex="40" class="rule">
+    <div fxFlex="40" fxFlex.lt-md="30" class="rule">
       <h1>Chính sách bảo hành & bảo trì</h1>
       <div
         (click)="isCollapsed = !isCollapsed"
@@ -94,7 +94,7 @@
         </div>
       </div>
     </div>
-    <div fxFlex="20" class="rule">
+    <div fxFlex="25" fxFlex.lt-md="35" class="rule">
       <h1>Facebook</h1>
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhariwongiatao&tabs=timeline&width=250&height=120&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"

@@ -66,11 +66,29 @@
     }
 
     .footer-main {
+      padding: 10px 2vw !important;
       > div {
         margin-bottom: 10px !important;
       }
       .rule > :last-child {
         height: auto !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    margin-bottom: 0 !important;
+    .footer-main {
+      padding-bottom: 0 !important;
+      #ruleCollapse {
+        p {
+          margin-bottom: 5px !important;
+        }
+      }
+      > :last-child {
+        max-height: 135px;
       }
     }
   }
