@@ -1,246 +1,158 @@
-<div class="header-container">
-  <div
-    class="header-info-top"
-    fxLayout="row"
-    fxLayout.lt-md="column"
-    fxLayoutAlign="space-between"
-    fxHide.lt-lg
-  >
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <i class="las la-envelope la-lg"></i>
-      &nbsp; info@thientruongsport.com
+<div class="header">
+  <div class="header__bg"></div>
+
+  <div fxLayout="row wrap" class="header__log">
+    <div fxFlex="5" fxFlex.lt-md="45" fxFlex.lt-sm="20" class="header__logo text-center">
+      <a href="#0"><i class="las la-home la-2x color-clouds"></i></a>
     </div>
-    <div fxLayout="row" fxLayoutAlign="center center">
-      Kết nối chúng tôi: &nbsp;
-      <i class="lab la-youtube la-lg"></i>
-      <i class="lab la-twitter la-lg"></i>
-      <i class="lab la-pinterest la-lg"></i>
-      <i class="lab la-linkedin la-lg"></i>
-      <i class="lab la-facebook la-lg"></i>
+    <div
+      fxFlex="20"
+      fxFlex.lt-md="45"
+      fxFlex.lt-sm="60"
+      fxLayout="row"
+      fxLayoutAlign="end center"
+      fxLayoutAlign.lt-md="center center"
+    >
+      <input type="text" fxFlex="85" fxFlex.md="80" fxFlex.lt-sm="80" placeholder="Liên hệ: 0964029436" />
+      <button fxFlex="15" fxFlex.md="20">
+        <i class="las la-search"></i>
+      </button>
     </div>
-  </div>
-  <div
-    class="header-main"
-    fxLayout="row"
-    fxLayout.lt-md="column"
-    fxLayout.lt-sm="row"
-    fxLayoutAlign="space-between"
-  >
-    <div fxFlex="35" fxFlex.lt-sm="30" fxHide.sm fxLayout="row">
-      <button
-        class="format-btn"
-        fxFlex.lt-sm="46"
-        fxHide.gt-sm
+    <div fxFlex="20" fxHide.sm fxHide.gt-sm class="header__logo toggle-btn text-center">
+      <a 
         (click)="isCollapsed = !isCollapsed"
         [attr.aria-expanded]="!isCollapsed"
         aria-controls="navCollapse"
-      >
-        <i [hidden]="!isCollapsed" class="las la-bars color-silver"></i>
-        <i [hidden]="isCollapsed" class="las la-times color-pomegranate"></i>
-      </button>
-      <img
-        fxFlex="90"
-        fxFlex.lt-sm="54"
-        src="https://thientruongsport.com/template/images/logo.png"
-        alt="company image"
-      />
+        href="#0">        
+        <i [hidden]="!isCollapsed" class="las la-2x la-bars color-silver"></i>
+        <i [hidden]="isCollapsed" class="las la-2x la-times color-pomegranate"></i>
+      </a>
     </div>
     <div
-      fxFlex="60"
-      fxFlex.lt-sm="70"
-      fxLayout="row"
-      fxLayout.lt-sm="column"
-      fxLayoutAlign="end center"
-      fxLayoutAlign.lt-md="center"
-      fxLayoutAlign.lt-sm="stretch"
-    >
-      <div
-        fxFlex="55"
-        fxFlex.lt-sm="100"
-        fxLayout="row"
-        fxLayoutAlign="end center"
-        fxLayoutAlign.lt-md="center center"
-      >
-        <input type="text" fxFlex="75" fxFlex.lt-md="60" fxFlex.lt-sm="80" />
-        <button fxFlex="25" fxFlex.lt-md="20">
-          <i class="las la-search"></i>
-          <span> Tìm kiếm </span>
-        </button>
-      </div>
-      <div
-        fxFlex="45"
-        fxLayout="row"
-        fxLayoutAlign="start center"
-        fxLayoutAlign.lt-md="center center"
-        fxHide.lt-sm
-      >
-        <div>
-          <img
-            src="https://thientruongsport.com/template/images/hotline.png"
-            alt="phone image"
-          />
-        </div>
-        <div>
-          <p class="none-margin">Hotline:</p>
-          <h1>0936.442.909</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="header-nav"
     id="navCollapse"
     [collapse]="isCollapsed"
     [isAnimated]="true"
-  >
-    <nav class="menu" role="navigation">
+    fxFlex="75"
+    fxFlex.md="70"
+    fxFlex.lt-md="100">
       <ol
-        fxLayout="row"
-        fxLayout.lt-sm="column"
-        fxLayoutGap="1vw"
-        fxLayoutGap.lt-lg="0.25vw"
-        fxLayoutGap.lt-md="0"
-      >
-        <li class="text-center" fxFlex="10" fxFlex.lt-md="25">
-          <a href="#0"><i class="las la-home la-2x"></i></a>
-        </li>
-        <li
-          fxFlex="auto"
-          fxFlex.lt-md="25"
-          class="menu-item"
-          aria-haspopup="true"
+      fxLayout="row wrap"
+      fxLayoutAlign="center"
+      fxLayoutGap="0.25vw"
+      fxLayoutGap.lt-sm="0"
+    >
+      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item">
+        <a href="#0"
+          >Thiết bị phòng gym <br />
+          Thiên Trường</a
         >
-          <a href="#0"
-            >Dụng cụ thể thao <br />
-            ngoài trời <i class="las la-angle-down la-sm"></i
-          ></a>
-          <ol class="sub-menu" aria-label="submenu">
-            <li class="menu-item"><a href="#0">Máy tập gym</a></li>
-            <li class="menu-item"><a href="#0">Dụng cụ thể thao đa năng</a></li>
-            <li class="menu-item"><a href="#0">Ghế công viên</a></li>
-            <li class="menu-item">
-              <a href="#0">Dụng cụ thể thao sân vườn</a>
-            </li>
-            <li class="menu-item">
-              <a href="#0">Dụng cụ thể thao trường học</a>
-            </li>
-            <li class="menu-item"><a href="#0">Trụ cầu lông</a></li>
-            <li class="menu-item"><a href="#0">Trụ bóng rổ</a></li>
-          </ol>
-        </li>
-        <li
-          fxFlex="auto"
-          fxFlex.lt-md="25"
-          class="menu-item"
-          aria-haspopup="true"
-        >
-          <a href="#0"
-            >Dụng cụ trẻ em <br />
-            ngoài trời <i class="las la-angle-down la-sm"></i
-          ></a>
-          <ol class="sub-menu" aria-label="submenu">
-            <li class="menu-item">
-              <a href="#0">Cầu trượt mầm non nhựa composite</a>
-            </li>
-            <li class="menu-item"><a href="#0">Thiết bị mầm non</a></li>
-            <li class="menu-item"><a href="#0">Bồn cát</a></li>
-            <li class="menu-item"><a href="#0">Đu quay</a></li>
-            <li class="menu-item"><a href="#0">Thú nhún</a></li>
-            <li class="menu-item"><a href="#0">Xích đu</a></li>
-            <li class="menu-item"><a href="#0">Nhà banh</a></li>
-            <li class="menu-item"><a href="#0">Thang leo</a></li>
-            <li class="menu-item"><a href="#0">Bập bênh</a></li>
-            <li class="menu-item"><a href="#0">Thùng rác</a></li>
-          </ol>
-        </li>
+      </li>
+      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+        <a href="#0"
+          >Dụng cụ thể thao <br />
+          ngoài trời <i class="las la-angle-down la-sm"></i
+        ></a>
+        <ol class="sub-menu" aria-label="submenu">
+          <li class="menu-item"><a href="#0">Máy tập gym</a></li>
+          <li class="menu-item"><a href="#0">Dụng cụ thể thao đa năng</a></li>
+          <li class="menu-item"><a href="#0">Ghế công viên</a></li>
+          <li class="menu-item">
+            <a href="#0">Dụng cụ thể thao sân vườn</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Dụng cụ thể thao trường học</a>
+          </li>
+          <li class="menu-item"><a href="#0">Trụ cầu lông</a></li>
+          <li class="menu-item"><a href="#0">Trụ bóng rổ</a></li>
+        </ol>
+      </li>
+      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+        <a href="#0"
+          >Dụng cụ trẻ em <br />
+          ngoài trời <i class="las la-angle-down la-sm"></i
+        ></a>
+        <ol class="sub-menu" aria-label="submenu">
+          <li class="menu-item">
+            <a href="#0">Cầu trượt mầm non nhựa composite</a>
+          </li>
+          <li class="menu-item"><a href="#0">Thiết bị mầm non</a></li>
+          <li class="menu-item"><a href="#0">Bồn cát</a></li>
+          <li class="menu-item"><a href="#0">Đu quay</a></li>
+          <li class="menu-item"><a href="#0">Thú nhún</a></li>
+          <li class="menu-item"><a href="#0">Xích đu</a></li>
+          <li class="menu-item"><a href="#0">Nhà banh</a></li>
+          <li class="menu-item"><a href="#0">Thang leo</a></li>
+          <li class="menu-item"><a href="#0">Bập bênh</a></li>
+          <li class="menu-item"><a href="#0">Thùng rác</a></li>
+        </ol>
+      </li>
 
-        <li
-          fxFlex="auto"
-          fxFlex.lt-md="25"
-          class="menu-item"
-          aria-haspopup="true"
-        >
-          <a href="#0"
-            >Thiết bị phòng gym <br />
-            MBH Fitness <i class="las la-angle-down la-sm"></i
-          ></a>
-          <ol class="sub-menu" aria-label="submenu">
-            <li class="menu-item">
-              <a href="#0">Thiết bị tập thể lực MBH - MO Series</a>
-            </li>
-            <li class="menu-item">
-              <a href="#0">Thiết bị tập thể lực MBH - H Series</a>
-            </li>
-            <li class="menu-item">
-              <a href="#0">Thiết bị tập thể lực MBH - MA Series</a>
-            </li>
-            <li class="menu-item">
-              <a href="#0">Thiết bị tập thể lực MBH - MTM Series</a>
-            </li>
-            <li class="menu-item">
-              <a href="#0">Xe đạp thể dục cao cấp MBH</a>
-            </li>
-            <li class="menu-item">
-              <a href="#0">Thiết bị tập thể lực MBH - MV Series</a>
-            </li>
-            <li class="menu-item">
-              <a href="#0">Thiết bị tập thể lực MBH - MU Series</a>
-            </li>
-            <li class="menu-item"><a href="#0">Máy chạy bộ MBH Fitness</a></li>
-            <li class="menu-item"><a href="#0">Xe đạp MHB Fitness</a></li>
-          </ol>
-        </li>
+      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+        <a href="#0"
+          >Thiết bị phòng gym <br />
+          MBH Fitness <i class="las la-angle-down la-sm"></i
+        ></a>
+        <ol class="sub-menu" aria-label="submenu">
+          <li class="menu-item">
+            <a href="#0">Thiết bị tập thể lực MBH - MO Series</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Thiết bị tập thể lực MBH - H Series</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Thiết bị tập thể lực MBH - MA Series</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Thiết bị tập thể lực MBH - MTM Series</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Xe đạp thể dục cao cấp MBH</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Thiết bị tập thể lực MBH - MV Series</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Thiết bị tập thể lực MBH - MU Series</a>
+          </li>
+          <li class="menu-item"><a href="#0">Máy chạy bộ MBH Fitness</a></li>
+          <li class="menu-item"><a href="#0">Xe đạp MHB Fitness</a></li>
+        </ol>
+      </li>
 
-        <li
-          fxFlex="auto"
-          fxFlex.lt-md="25"
-          class="menu-item"
-          aria-haspopup="true"
-        >
-          <a href="#0"
-            >Thiết bị phòng gym <br />
-            gia đình <i class="las la-angle-down la-sm"></i
-          ></a>
-          <ol class="sub-menu" aria-label="submenu">
-            <li class="menu-item"><a href="#0">Xe đạp thể dục</a></li>
-            <li class="menu-item"><a href="#0">Máy chạy bộ</a></li>
-            <li class="menu-item"><a href="#0">Máy rung toàn thân</a></li>
-            <li class="menu-item"><a href="#0">Máy tập bụng</a></li>
-            <li class="menu-item"><a href="#0">Máy trượt tuyết</a></li>
-          </ol>
-        </li>
+      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+        <a href="#0"
+          >Thiết bị phòng gym <br />
+          gia đình <i class="las la-angle-down la-sm"></i
+        ></a>
+        <ol class="sub-menu" aria-label="submenu">
+          <li class="menu-item"><a href="#0">Xe đạp thể dục</a></li>
+          <li class="menu-item"><a href="#0">Máy chạy bộ</a></li>
+          <li class="menu-item"><a href="#0">Máy rung toàn thân</a></li>
+          <li class="menu-item"><a href="#0">Máy tập bụng</a></li>
+          <li class="menu-item"><a href="#0">Máy trượt tuyết</a></li>
+        </ol>
+      </li>
 
-        <li
-          fxFlex="auto"
-          fxFlex.lt-md="25"
-          class="menu-item"
-          aria-haspopup="true"
-        >
-          <a href="#0"
-            >Thiết bị phòng gym <br />
-            IMPULSE Fitness <i class="las la-angle-down la-sm"></i
-          ></a>
-          <ol class="sub-menu" aria-label="submenu">
-            <li class="menu-item">
-              <a href="#0">Giàn tập IMPULSE Series IT9</a>
-            </li>
-            <li class="menu-item"><a href="#0">Máy khối phòng gym</a></li>
-          </ol>
-        </li>
+      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+        <a href="#0"
+          >Thiết bị phòng gym <br />
+          IMPULSE Fitness <i class="las la-angle-down la-sm"></i
+        ></a>
+        <ol class="sub-menu" aria-label="submenu">
+          <li class="menu-item">
+            <a href="#0">Giàn tập IMPULSE Series IT9</a>
+          </li>
+          <li class="menu-item"><a href="#0">Máy khối phòng gym</a></li>
+        </ol>
+      </li>
 
-        <li fxFlex="auto" fxFlex.lt-md="25" class="menu-item">
-          <a href="#0"
-            >Thiết bị phòng gym <br />
-            Thiên Trường</a
-          >
-        </li>
-        <li fxFlex="auto" fxFlex.lt-md="25" class="menu-item">
-          <a href="#0"
-            >Sản phẩm <br />
-            massage</a
-          >
-        </li>
-      </ol>
-    </nav>
+      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item">
+        <a href="#0"
+          >Sản phẩm <br />
+          massage</a
+        >
+      </li>
+    </ol>
+    </div>
   </div>
 </div>
