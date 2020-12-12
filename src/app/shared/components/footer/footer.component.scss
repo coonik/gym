@@ -5,18 +5,15 @@
   color: $color-clouds;
   background: $color-silver;
 
-  strong {
-    color: $color-orange;
-  }
-
   hr {
     width: 30%;
     margin: 10px 0;
   }
 
   >:last-child {
-    >:last-child {
-      &:hover, :visited {
+    >:last-child
+      >:last-child {
+        &:hover, :visited {
         color: $color-orange;
       }
     }
