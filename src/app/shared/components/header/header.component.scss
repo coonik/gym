@@ -12,13 +12,13 @@
     padding: 0 1rem;
     align-self: center;
     cursor: pointer;
-    color: $color-orange;
  
-    &:hover {
+    &:hover .las {
       color: $color-sun-flower;
     }
     
     .las {
+      color: $color-orange;
       padding-top: 2px;
     }
   }
@@ -80,7 +80,7 @@
 
     >:nth-child(2) {
       > input {
-        padding: 5px;
+        padding: 7px;
         border: 1px solid $color-carrot;
         outline-color: $color-pumpkin;
         margin-right: 0.8px;

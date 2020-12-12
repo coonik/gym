@@ -1,1 +1,50 @@
-<p>products-page works!</p>
+<div class="products-container">
+    <div class="products-pagination mb-4 justify-content-end"
+        fxLayout="row wrap"
+        >
+        <div>
+            <pagination
+              [directionLinks]="false"
+              [totalItems]="totalItems"
+              [itemsPerPage]="itemsPerPage"
+              [(ngModel)]="currentPage"
+              (numPages)="currentPage = $event"
+              (pageChanged)="pageChanged($event)">
+            </pagination>
+        </div>
+        <div class="text-right justify-content-center ml-4">
+            <label class="none-margin" for="page">Số sản phẩm / 1 trang &nbsp;</label>
+            <select name="page" id="page" [(ngModel)]="itemsPerPage">
+                <option value=10>10</option>
+                <option value=20>20</option>
+                <option value=30>30</option>
+                <option value=50>50</option>
+            </select>
+        </div>
+    </div>
+    <div class="products"
+        fxLayout="row wrap"
+        fxLayoutGap="0.3vw"
+        fxLayoutGap.lt-md="0.9vw"
+        fxLayoutGap.lt-sm="0" >
+        <div class="text-center" 
+            *ngFor="let product of paginatedData.products"
+            fxFlex="33"
+            fxFlex.lt-md="49"
+            fxFlex.lt-sm="100">
+                <img src="{{product.image}}" alt="">
+                <div>
+                    <h5 class="color-pumpkin">
+                        <strong>
+                            {{ product.name }}
+                        </strong>
+                    </h5>
+                    <p>
+                        <span class="color-carrot">Liên hệ</span> 
+                        &nbsp; <i class="las la-lg la-hand-point-right"></i> &nbsp;
+                        <span class="color-carrot">giá tốt nhất</span>
+                    </p>
+                </div>
+        </div>
+    </div>
+</div>
