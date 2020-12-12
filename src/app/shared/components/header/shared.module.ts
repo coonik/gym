@@ -1,3 +1,4 @@
+import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -9,7 +10,7 @@ const components = [HeaderComponent, FooterComponent];
 
 @NgModule({
   declarations: [...components],
-  imports: [...modules],
+  imports: [...modules, PopoverModule.forRoot()],
   exports: [...components, ...modules],
   providers: [],
 })

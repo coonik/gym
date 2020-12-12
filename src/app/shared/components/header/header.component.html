@@ -2,9 +2,14 @@
   <div class="header__bg"></div>
 
   <div fxLayout="row wrap" class="header__log">
-    <div fxFlex="5" fxFlex.lt-md="45" fxFlex.lt-sm="20" class="header__logo text-center">
-      <a href="#0"><i class="las la-home la-2x color-clouds"></i></a>
-    </div>
+      <a 
+      fxFlex="5" 
+      fxFlex.lt-md="45" 
+      fxFlex.lt-sm="20" 
+      class="header__logo text-center" 
+      href="#0">
+        <i class="las la-home la-2x color-clouds"></i>
+      </a>
     <div
       fxFlex="20"
       fxFlex.lt-md="45"
@@ -14,7 +19,7 @@
       fxLayoutAlign.lt-md="center center"
     >
       <input type="text" fxFlex="85" fxFlex.md="80" fxFlex.lt-sm="80" placeholder="Liên hệ: 0964029436" />
-      <button fxFlex="15" fxFlex.md="20">
+      <button class="format-btn" fxFlex="15" fxFlex.md="20">
         <i class="las la-search"></i>
       </button>
     </div>
