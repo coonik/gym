@@ -38,7 +38,11 @@
         </div>
         <div class="text-right justify-content-center mb-2 ml-4">
             <label class="none-margin" for="page">Số sản phẩm / 1 trang &nbsp;</label>
-            <select name="page" id="page" [(ngModel)]="itemsPerPage">
+            <select 
+                name="page" 
+                id="page" 
+                [(ngModel)]="itemsPerPage"
+                (change)="pageChanged()">
                 <option value=10>10</option>
                 <option value=20>20</option>
                 <option value=30>30</option>

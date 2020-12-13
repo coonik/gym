@@ -41,7 +41,7 @@
         (click)="isCollapsed = !isCollapsed"
         [attr.aria-expanded]="!isCollapsed"
         aria-controls="navCollapse"
-        href="#0">        
+       >        
         <i [hidden]="!isCollapsed" class="las la-2x la-bars color-orange"></i>
         <i [hidden]="isCollapsed" class="las la-2x la-times color-pomegranate"></i>
       </a>
@@ -68,106 +68,174 @@
         >
       </li>
       <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a href="#0"
+        <a
           >Dụng cụ thể thao <br />
           ngoài trời <i class="las la-angle-down la-sm"></i
         ></a>
         <ol class="sub-menu" aria-label="submenu">
-          <li class="menu-item"><a href="#0">Máy tập gym</a></li>
-          <li class="menu-item"><a href="#0">Dụng cụ thể thao đa năng</a></li>
-          <li class="menu-item"><a href="#0">Ghế công viên</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'mayTapGymNgoaiTroi'}">Máy tập gym</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'dungCuTheThaoNgoaiTroiDaNang'}">Dụng cụ thể thao đa năng</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'gheCongVien'}">Ghế công viên</a></li>
           <li class="menu-item">
-            <a href="#0">Dụng cụ thể thao sân vườn</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'dungCuTheThaoSanVuonNgoaiTroi'}">Dụng cụ thể thao sân vườn</a>
           </li>
           <li class="menu-item">
-            <a href="#0">Dụng cụ thể thao trường học</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'dungCuTheThaoTruongHocNgoaiTroi'}">Dụng cụ thể thao trường học</a>
           </li>
-          <li class="menu-item"><a href="#0">Trụ cầu lông</a></li>
-          <li class="menu-item"><a href="#0">Trụ bóng rổ</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'truCauLong'}">Trụ cầu lông</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'truBongRo'}">Trụ bóng rổ</a></li>
         </ol>
       </li>
       <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a href="#0"
+        <a
           >Dụng cụ trẻ em <br />
           ngoài trời <i class="las la-angle-down la-sm"></i
         ></a>
         <ol class="sub-menu" aria-label="submenu">
           <li class="menu-item">
-            <a href="#0">Cầu trượt mầm non nhựa composite</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'cauTruotMamNonNhuaComposite'}">Cầu trượt mầm non nhựa composite</a>
           </li>
-          <li class="menu-item"><a href="#0">Thiết bị mầm non</a></li>
-          <li class="menu-item"><a href="#0">Bồn cát</a></li>
-          <li class="menu-item"><a href="#0">Đu quay</a></li>
-          <li class="menu-item"><a href="#0">Thú nhún</a></li>
-          <li class="menu-item"><a href="#0">Xích đu</a></li>
-          <li class="menu-item"><a href="#0">Nhà banh</a></li>
-          <li class="menu-item"><a href="#0">Thang leo</a></li>
-          <li class="menu-item"><a href="#0">Bập bênh</a></li>
-          <li class="menu-item"><a href="#0">Thùng rác</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thietBiMamNon'}">Thiết bị mầm non</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'bonCat'}">Bồn cát</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'duQuayTruongMamNon'}">Đu quay</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thuNhunTreEm'}">Thú nhún</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'xichDuTreEm'}">Xích đu</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'nhaBanhTreEm'}">Nhà banh</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thangLeoMamNon'}">Thang leo</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'bapBenhTreEm'}">Bập bênh</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thungRac'}">Thùng rác</a></li>
         </ol>
       </li>
 
       <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a href="#0"
+        <a
           >Thiết bị phòng gym <br />
           MBH Fitness <i class="las la-angle-down la-sm"></i
         ></a>
         <ol class="sub-menu" aria-label="submenu">
           <li class="menu-item">
-            <a href="#0">Thiết bị tập thể lực MBH - MO Series</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thietBiTapTheLucMBHMoSeries'}">Thiết bị tập thể lực MBH - MO Series</a>
           </li>
           <li class="menu-item">
-            <a href="#0">Thiết bị tập thể lực MBH - H Series</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thietBiTapTheLucMBHHSeries'}">Thiết bị tập thể lực MBH - H Series</a>
           </li>
           <li class="menu-item">
-            <a href="#0">Thiết bị tập thể lực MBH - MA Series</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thietBiTapTheLucMBHMaSeries'}">Thiết bị tập thể lực MBH - MA Series</a>
           </li>
           <li class="menu-item">
-            <a href="#0">Thiết bị tập thể lực MBH - MTM Series</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thietBiTapTheLucMBHMTMSeries'}">Thiết bị tập thể lực MBH - MTM Series</a>
           </li>
           <li class="menu-item">
-            <a href="#0">Xe đạp thể dục cao cấp MBH</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'xeDapTheDucCaoCapMBH'}">Xe đạp thể dục cao cấp MBH</a>
           </li>
           <li class="menu-item">
-            <a href="#0">Thiết bị tập thể lực MBH - MV Series</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thietBiTapTheLucMBHMvSeries'}">Thiết bị tập thể lực MBH - MV Series</a>
           </li>
           <li class="menu-item">
-            <a href="#0">Thiết bị tập thể lực MBH - MU Series</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'thietBiTapTheLucMBHMuSeries'}">Thiết bị tập thể lực MBH - MU Series</a>
           </li>
-          <li class="menu-item"><a href="#0">Máy chạy bộ MBH Fitness</a></li>
-          <li class="menu-item"><a href="#0">Xe đạp MHB Fitness</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'mayChayBoMBHFitness'}">Máy chạy bộ MBH Fitness</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'xeDapMBHFitness'}">Xe đạp MHB Fitness</a></li>
         </ol>
       </li>
 
       <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a href="#0"
+        <a
           >Thiết bị phòng gym <br />
           gia đình <i class="las la-angle-down la-sm"></i
         ></a>
         <ol class="sub-menu" aria-label="submenu">
-          <li class="menu-item"><a href="#0">Xe đạp thể dục</a></li>
-          <li class="menu-item"><a href="#0">Máy chạy bộ</a></li>
-          <li class="menu-item"><a href="#0">Máy rung toàn thân</a></li>
-          <li class="menu-item"><a href="#0">Máy tập bụng</a></li>
-          <li class="menu-item"><a href="#0">Máy trượt tuyết</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'xeDapTheDuc'}">Xe đạp thể dục</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'mayChayBo'}">Máy chạy bộ</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'mayRungToanThan'}">Máy rung toàn thân</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'mayTapBung'}">Máy tập bụng</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'mayTruotTuyet'}">Máy trượt tuyết</a></li>
         </ol>
       </li>
 
       <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a href="#0"
+        <a
           >Thiết bị phòng gym <br />
           IMPULSE Fitness <i class="las la-angle-down la-sm"></i
         ></a>
         <ol class="sub-menu" aria-label="submenu">
           <li class="menu-item">
-            <a href="#0">Giàn tập IMPULSE Series IT9</a>
+            <a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'gianTapImpulseSeriesIT9'}">Giàn tập IMPULSE Series IT9</a>
           </li>
-          <li class="menu-item"><a href="#0">Máy khối phòng gym</a></li>
+          <li class="menu-item"><a
+            [routerLink]= "['/products']"
+            [queryParams]="{pageName:'mayKhoiPhongGym'}">Máy khối phòng gym</a></li>
         </ol>
       </li>
 
       <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item">
-        <a href="#0"
+        <a
+        [routerLink]= "['/products']"
+        [queryParams]="{pageName:'sanPhamMassage'}"
           >Sản phẩm <br />
           massage</a
         >
