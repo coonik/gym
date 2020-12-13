@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export default class HeaderComponent {
   public isCollapsed = window.outerWidth < 600;
+
+  public searchName: string;
+
+  update(searchName: string, search?: boolean) {
+    this.searchName = searchName;
+    if (search) {
+      setTimeout(() => {
+        document.getElementById('search').click();
+      }, 0);
+    }
+  }
 }

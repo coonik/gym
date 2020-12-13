@@ -27,7 +27,7 @@ class ProductsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params: IProductsParams) => {
-      this.searchName = params.searchName;
+      this.searchName = params.searchName === '' ? 'Rỗng' : params.searchName;
       if (this.searchName) {
         let dataTemp: IProduct[] = [];
         Object.keys(DATA).forEach((key) => {
@@ -40,12 +40,18 @@ class ProductsPageComponent implements OnInit {
         });
 
         this.data = {
-          name: 'Kết quả tìm kiếm:',
+          name: 'Kết quả tìm kiếm cho',
           products: dataTemp,
         };
       } else {
-        this.data = DATA[`${params.pageName}`];
+        this.data = params.pageName
+          ? DATA[`${params.pageName}`]
+          : {
+              name: 'Không tìm thấy trang',
+              products: [],
+            };
       }
+
       this.totalItems = this.data.products.length;
       this.pageChanged();
     });

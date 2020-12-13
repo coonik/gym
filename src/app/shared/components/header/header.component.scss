@@ -45,6 +45,11 @@
     color: white;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 
+    // Search button
+    > div > a {
+      height: 40px;
+    }
+
     &--icon {
       fill: currentColor;
       margin-right: 0.5rem;
@@ -215,6 +220,9 @@
     &__log {
       padding: 0 !important;
 
+      > div > a {
+        height: 28px !important;
+      }
       >:nth-child(1),
       >:nth-child(2),
       .toggle-btn {

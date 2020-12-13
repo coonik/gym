@@ -14,25 +14,19 @@
     </div>
     <div *ngIf="paginatedData.products.length > 0">
         <div 
-        class="products-pagination mb-4 justify-content-end"
+        class="products-pagination mb-2 justify-content-end"
         fxLayout="row wrap"
         >
-        <div class="align-self-center mr-auto">
-            <h5 *ngIf="searchName" class="color-orange none-margin">
-                Kết quả tìm kiếm cho
-                <span class="color-asbestos">'{{ searchName }}':</span>
-                &nbsp;
-                {{ totalItems }}
-                <span class="color-asbestos"> sản phẩm </span>
-            </h5>
-            <h5 *ngIf="!searchName" class="color-orange none-margin">
-                {{ paginatedData.name }}:
+        <div class="align-self-center mb-2 mr-auto">
+            <h5 class="color-orange none-margin">
+                {{ paginatedData.name }}
+                <span *ngIf="searchName" class="color-asbestos">'{{ searchName }}'</span>:
                 &nbsp;
                 {{ totalItems }}
                 <span class="color-asbestos"> sản phẩm </span>
             </h5>
         </div>
-        <div>
+        <div class="mb-2">
             <pagination
               [directionLinks]="false"
               [totalItems]="totalItems"
@@ -42,7 +36,7 @@
               (pageChanged)="pageChanged($event)">
             </pagination>
         </div>
-        <div class="text-right justify-content-center ml-4">
+        <div class="text-right justify-content-center mb-2 ml-4">
             <label class="none-margin" for="page">Số sản phẩm / 1 trang &nbsp;</label>
             <select name="page" id="page" [(ngModel)]="itemsPerPage">
                 <option value=10>10</option>
