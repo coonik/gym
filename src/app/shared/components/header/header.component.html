@@ -37,14 +37,14 @@
       </a>
     </div>
     <div fxFlex="20" fxHide.sm fxHide.gt-sm class="header__logo toggle-btn text-center">
-      <a 
+      <button 
         (click)="isCollapsed = !isCollapsed"
         [attr.aria-expanded]="!isCollapsed"
         aria-controls="navCollapse"
        >        
         <i [hidden]="!isCollapsed" class="las la-2x la-bars color-orange"></i>
         <i [hidden]="isCollapsed" class="las la-2x la-times color-pomegranate"></i>
-      </a>
+      </button>
     </div>
     <div
     id="navCollapse"
