@@ -2040,11 +2040,11 @@ const DATA = {
         image: 'https://thientruongsport.com/upload/product/ban-bong-ban-thi-dau-bbtd-01.jpg',
       },
       {
-        name: 'Bàn bóng bàn Thiên Trường BBTL-05',
+        name: 'Bàn bóng bàn Thiên Thanh BBTL-05',
         image: 'https://thientruongsport.com/upload/product/ban-bong-ban-thien-truong-bbtl-05.jpg',
       },
       {
-        name: 'Bàn bóng bàn Thiên Trường BBTL-04',
+        name: 'Bàn bóng bàn Thiên Thanh BBTL-04',
         image: 'https://thientruongsport.com/upload/product/ban-bong-ban-thien-truong-bbtl-04.jpg',
       },
       {

@@ -1,6 +1,14 @@
 @import '/src/assets/variable.scss';
 
 .products-container {
+    .products-title {
+        padding: 10px 20px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 1px 1px;
+    }
+
+
     .products-pagination {
         ::ng-deep .pagination {
             justify-content: flex-end;

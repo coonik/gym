@@ -1,79 +1,71 @@
 <div class="products-container">
-    <div *ngIf="paginatedData.products.length === 0">
-        <h5 *ngIf="searchName" class="color-orange mb-4">
-            Kết quả tìm kiếm cho: <span class="color-asbestos">'{{ searchName }}'</span>
-        </h5>
-        <h5 *ngIf="!searchName" class="color-orange mb-4">
-            {{ paginatedData.name }}
-        </h5>
-        <div>
-            <h5 class="color-asbestos">
-                Không có sản phẩm nào phù hợp!
-            </h5>
-        </div>
+  <div class="products-title" *ngIf="paginatedData.products.length === 0">
+    <h5 class="color-orange mb-4">
+      {{ paginatedData.name }}
+      <span *ngIf="searchName" class="inline-block color-asbestos"
+        >&ldquo;{{ searchName }}&rdquo; :</span
+      >
+    </h5>
+    <div>
+      <h6 class="color-asbestos">Không có sản phẩm nào phù hợp!</h6>
     </div>
-    <div *ngIf="paginatedData.products.length > 0">
-        <div 
-        class="products-pagination mb-2 justify-content-end"
-        fxLayout="row wrap"
+  </div>
+  <div *ngIf="paginatedData.products.length > 0">
+    <div class="products-title products-pagination mb-2 justify-content-end" fxLayout="row wrap">
+      <div class="align-self-center mt-1 mb-1 mr-auto">
+        <h5 class="color-orange none-margin">
+          {{ paginatedData.name }}
+          <span *ngIf="searchName" class="inline-block color-asbestos"
+            >&ldquo;{{ searchName }}&rdquo; :</span
+          >
+          &nbsp;
+          {{ totalItems }}
+          <span class="color-asbestos"> sản phẩm </span>
+        </h5>
+      </div>
+      <div class="mt-1 mb-1">
+        <pagination
+          [directionLinks]="false"
+          [totalItems]="totalItems"
+          [itemsPerPage]="itemsPerPage"
+          [(ngModel)]="currentPage"
+          (numPages)="(currentPage)"
+          (pageChanged)="pageChanged($event)"
         >
-        <div class="align-self-center mb-2 mr-auto">
-            <h5 class="color-orange none-margin">
-                {{ paginatedData.name }}
-                <span *ngIf="searchName" class="color-asbestos">'{{ searchName }}'</span>:
-                &nbsp;
-                {{ totalItems }}
-                <span class="color-asbestos"> sản phẩm </span>
-            </h5>
-        </div>
-        <div class="mb-2">
-            <pagination
-              [directionLinks]="false"
-              [totalItems]="totalItems"
-              [itemsPerPage]="itemsPerPage"
-              [(ngModel)]="currentPage"
-              (numPages)="currentPage"
-              (pageChanged)="pageChanged($event)">
-            </pagination>
-        </div>
-        <div class="text-right justify-content-center mb-2 ml-4">
-            <label class="none-margin" for="page">Số sản phẩm / 1 trang &nbsp;</label>
-            <select 
-                name="page" 
-                id="page" 
-                [(ngModel)]="itemsPerPage"
-                (change)="pageChanged()">
-                <option value=10>10</option>
-                <option value=20>20</option>
-                <option value=30>30</option>
-                <option value=50>50</option>
-            </select>
-        </div>
+        </pagination>
+      </div>
+      <div class="text-right justify-content-center mt-1 mb-1 ml-4">
+        <label class="none-margin" for="page">Số sản phẩm / 1 trang &nbsp;</label>
+        <select class="pointer" name="page" id="page" [(ngModel)]="itemsPerPage" (change)="pageChanged()">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+        </select>
+      </div>
     </div>
-    <div class="products"
-        fxLayout="row wrap"
-        fxLayoutGap="0.3vw"
-        fxLayoutGap.lt-md="0.9vw"
-        fxLayoutGap.lt-sm="0" >
-        <div class="text-center" 
-            *ngFor="let product of paginatedData.products"
-            fxFlex="33"
-            fxFlex.lt-md="49"
-            fxFlex.lt-sm="100">
-                <img src="{{product.image}}" alt="">
-                <div>
-                    <h5 class="color-pumpkin">
-                        <strong>
-                            {{ product.name }}
-                        </strong>
-                    </h5>
-                    <p>
-                        <span class="color-carrot">Liên hệ</span> 
-                        &nbsp; <i class="las la-lg la-hand-point-right"></i> &nbsp;
-                        <span class="color-carrot">giá tốt nhất</span>
-                    </p>
-                </div>
+    <div class="products" fxLayout="row wrap" fxLayoutAlign="space-between">
+      <div
+        class="text-center pointer"
+        *ngFor="let product of paginatedData.products"
+        fxFlex="33"
+        fxFlex.lt-md="49"
+        fxFlex.lt-sm="100"
+      >
+        <img src="{{ product.image }}" alt="" />
+        <div>
+          <h5 class="color-pumpkin">
+            <strong>
+              {{ product.name }}
+            </strong>
+          </h5>
+          <p>
+            <span class="color-carrot">Liên hệ</span>
+            &nbsp; <i class="las la-lg la-hand-point-right"></i> &nbsp;
+            <span class="color-carrot">giá tốt nhất</span>
+          </p>
         </div>
+      </div>
     </div>
-    </div>
+  </div>
 </div>
