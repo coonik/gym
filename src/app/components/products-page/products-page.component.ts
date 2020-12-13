@@ -21,11 +21,21 @@ class ProductsPageComponent implements OnInit {
 
   public currentPage = 1;
 
-  public itemsPerPage = 10;
+  public itemsPerPage: number;
+
+  public itemsPerRow: number;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    const deviceWidth = window.outerWidth;
+    if (deviceWidth > 426) {
+      this.itemsPerRow = deviceWidth > 768 ? 3 : 2;
+    } else {
+      this.itemsPerRow = 1;
+    }
+    this.itemsPerPage = this.itemsPerRow * 10;
+
     this.activatedRoute.queryParams.subscribe((params: IProductsParams) => {
       this.searchName = params.searchName === '' ? 'Rỗng' : params.searchName;
       if (this.searchName) {

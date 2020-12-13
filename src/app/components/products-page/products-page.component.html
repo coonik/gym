@@ -36,19 +36,25 @@
       </div>
       <div class="text-right justify-content-center mt-1 mb-1 ml-4">
         <label class="none-margin" for="page">Số sản phẩm / 1 trang &nbsp;</label>
-        <select class="pointer" name="page" id="page" [(ngModel)]="itemsPerPage" (change)="pageChanged()">
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-          <option value="50">50</option>
+        <select
+          class="pointer"
+          name="page"
+          id="page"
+          [(ngModel)]="itemsPerPage"
+          (change)="pageChanged()"
+        >
+          <option value="{{ itemsPerRow * 5 }}">{{ itemsPerRow * 5 }}</option>
+          <option value="{{ itemsPerRow * 10 }}">{{ itemsPerRow * 10 }}</option>
+          <option value="{{ itemsPerRow * 20 }}">{{ itemsPerRow * 20 }}</option>
+          <option value="{{ totalItems }}">Tất cả</option>
         </select>
       </div>
     </div>
-    <div class="products" fxLayout="row wrap" fxLayoutAlign="space-between">
+    <div class="products justify-content-center" fxLayout="row wrap">
       <div
         class="text-center pointer"
         *ngFor="let product of paginatedData.products"
-        fxFlex="33"
+        fxFlex="32"
         fxFlex.lt-md="49"
         fxFlex.lt-sm="100"
       >
