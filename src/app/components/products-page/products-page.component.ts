@@ -44,7 +44,7 @@ class ProductsPageComponent implements OnInit {
           dataTemp = [
             ...dataTemp,
             ...(DATA[`${key}`].products as IProduct[]).filter((product) =>
-              this.convertViToEn(product.name).includes(this.convertViToEn(this.searchName)),
+              this.convertViToEn(product.name).match(this.convertViToEn(this.searchName)),
             ),
           ];
         });
@@ -95,6 +95,8 @@ class ProductsPageComponent implements OnInit {
         // Some system encode vietnamese combining accent as individual utf-8 characters
         .replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, '') // Huyền sắc hỏi ngã nặng
         .replace(/\u02C6|\u0306|\u031B/g, '') // Â, Ê, Ă, Ơ, Ư
+        .replace(/[^a-zA-Z0-9 ]/g, '')
+        .replace(/\s/g, '')
     );
   };
 }
