@@ -1,4 +1,8 @@
 @import "./variable.scss";
+.hidden {
+  visibility: hidden !important;
+}
+
 .flex {
   display: flex;
 }

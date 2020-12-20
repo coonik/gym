@@ -2,14 +2,15 @@
   <div class="header__bg"></div>
 
   <div fxLayout="row wrap" class="header__log">
-      <a 
-        fxFlex="5" 
-        fxFlex.lt-md="45" 
-        fxFlex.lt-sm="20" 
-        class="header__logo text-center"
-        [routerLink]= "['/']">
-        <i class="las la-home la-2x color-clouds"></i>
-      </a>
+    <a
+      fxFlex="5"
+      fxFlex.lt-md="45"
+      fxFlex.lt-sm="20"
+      class="header__logo text-center"
+      [routerLink]="['/']"
+    >
+      <i class="las la-home la-2x color-clouds"></i>
+    </a>
     <div
       fxFlex="20"
       fxFlex.lt-md="45"
@@ -18,229 +19,285 @@
       fxLayoutAlign="end center"
       fxLayoutAlign.lt-md="center center"
     >
-      <input #search 
-        type="text"        
+      <input
+        #search
+        type="text"
         (keyup.enter)="update(search.value, true)"
         (blur)="update(search.value)"
-        fxFlex="85" 
-        fxFlex.md="80" 
-        fxFlex.lt-sm="80" 
-        placeholder="Liên hệ: 0964029436" />
+        fxFlex="85"
+        fxFlex.md="80"
+        fxFlex.lt-sm="80"
+        placeholder="Liên hệ: 0964029436"
+      />
       <a
         id="search"
-        [routerLink]= "['/products']"
-        [queryParams]="searchName!=='' ? {searchName:searchName}: null"
-        class="format-btn align-items-center flex justify-content-center" 
-        fxFlex="15" 
-        fxFlex.md="20">
+        (click)="onSearch()"
+        class="format-btn align-items-center flex justify-content-center"
+        fxFlex="15"
+        fxFlex.md="20"
+      >
         <i class="las la-search"></i>
       </a>
     </div>
     <div fxFlex="20" fxHide.sm fxHide.gt-sm class="header__logo toggle-btn text-center">
-      <button 
+      <button
         (click)="isCollapsed = !isCollapsed"
         [attr.aria-expanded]="!isCollapsed"
         aria-controls="navCollapse"
-       >        
+      >
         <i [hidden]="!isCollapsed" class="las la-2x la-bars color-orange"></i>
         <i [hidden]="isCollapsed" class="las la-2x la-times color-pomegranate"></i>
       </button>
     </div>
     <div
-    id="navCollapse"
-    [collapse]="isCollapsed"
-    [isAnimated]="true"
-    fxFlex="75"
-    fxFlex.md="70"
-    fxFlex.lt-md="100">
-      <ol
-      fxLayout="row wrap"
-      fxLayoutAlign="center"
-      fxLayoutGap="0.25vw"
-      fxLayoutGap.lt-sm="0"
+      id="navCollapse"
+      [collapse]="isCollapsed"
+      [isAnimated]="true"
+      fxFlex="75"
+      fxFlex.md="70"
+      fxFlex.lt-md="100"
     >
-      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item">
-        <a
-          [routerLink]= "['/products']"
-          [queryParams]="{pageName:'thienThanhGym'}"
-          >Thiết bị phòng gym <br />
-          Thiên Thanh</a
-        >
-      </li>
-      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a
-          >Dụng cụ thể thao <br />
-          ngoài trời <i class="las la-angle-down la-sm"></i
-        ></a>
-        <ol class="sub-menu" aria-label="submenu">
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'mayTapGymNgoaiTroi'}">Máy tập gym</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'dungCuTheThaoNgoaiTroiDaNang'}">Dụng cụ thể thao đa năng</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'gheCongVien'}">Ghế công viên</a></li>
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'dungCuTheThaoSanVuonNgoaiTroi'}">Dụng cụ thể thao sân vườn</a>
-          </li>
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'dungCuTheThaoTruongHocNgoaiTroi'}">Dụng cụ thể thao trường học</a>
-          </li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'truCauLong'}">Trụ cầu lông</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'truBongRo'}">Trụ bóng rổ</a></li>
-        </ol>
-      </li>
-      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a
-          >Dụng cụ trẻ em <br />
-          ngoài trời <i class="las la-angle-down la-sm"></i
-        ></a>
-        <ol class="sub-menu" aria-label="submenu">
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'cauTruotMamNonNhuaComposite'}">Cầu trượt mầm non nhựa composite</a>
-          </li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thietBiMamNon'}">Thiết bị mầm non</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'bonCat'}">Bồn cát</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'duQuayTruongMamNon'}">Đu quay</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thuNhunTreEm'}">Thú nhún</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'xichDuTreEm'}">Xích đu</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'nhaBanhTreEm'}">Nhà banh</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thangLeoMamNon'}">Thang leo</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'bapBenhTreEm'}">Bập bênh</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thungRac'}">Thùng rác</a></li>
-        </ol>
-      </li>
+      <ol fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="0.25vw" fxLayoutGap.lt-sm="0">
+        <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item">
+          <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'thienThanhGym' }"
+            >Thiết bị phòng gym <br />
+            Thiên Thanh</a
+          >
+        </li>
+        <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+          <a
+            >Dụng cụ thể thao <br />
+            ngoài trời <i class="las la-angle-down la-sm"></i
+          ></a>
+          <ol class="sub-menu" aria-label="submenu">
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'mayTapGymNgoaiTroi' }"
+                >Máy tập gym</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'dungCuTheThaoNgoaiTroiDaNang' }"
+                >Dụng cụ thể thao đa năng</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'gheCongVien' }"
+                >Ghế công viên</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'dungCuTheThaoSanVuonNgoaiTroi' }"
+                >Dụng cụ thể thao sân vườn</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'dungCuTheThaoTruongHocNgoaiTroi' }"
+                >Dụng cụ thể thao trường học</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'truCauLong' }"
+                >Trụ cầu lông</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'truBongRo' }"
+                >Trụ bóng rổ</a
+              >
+            </li>
+          </ol>
+        </li>
+        <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+          <a
+            >Dụng cụ trẻ em <br />
+            ngoài trời <i class="las la-angle-down la-sm"></i
+          ></a>
+          <ol class="sub-menu" aria-label="submenu">
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'cauTruotMamNonNhuaComposite' }"
+                >Cầu trượt mầm non nhựa composite</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'thietBiMamNon' }"
+                >Thiết bị mầm non</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'bonCat' }">Bồn cát</a>
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'duQuayTruongMamNon' }"
+                >Đu quay</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'thuNhunTreEm' }"
+                >Thú nhún</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'xichDuTreEm' }"
+                >Xích đu</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'nhaBanhTreEm' }"
+                >Nhà banh</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'thangLeoMamNon' }"
+                >Thang leo</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'bapBenhTreEm' }"
+                >Bập bênh</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'thungRac' }">Thùng rác</a>
+            </li>
+          </ol>
+        </li>
 
-      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a
-          >Thiết bị phòng gym <br />
-          MBH Fitness <i class="las la-angle-down la-sm"></i
-        ></a>
-        <ol class="sub-menu" aria-label="submenu">
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thietBiTapTheLucMBHMoSeries'}">Thiết bị tập thể lực MBH - MO Series</a>
-          </li>
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thietBiTapTheLucMBHHSeries'}">Thiết bị tập thể lực MBH - H Series</a>
-          </li>
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thietBiTapTheLucMBHMaSeries'}">Thiết bị tập thể lực MBH - MA Series</a>
-          </li>
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thietBiTapTheLucMBHMTMSeries'}">Thiết bị tập thể lực MBH - MTM Series</a>
-          </li>
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'xeDapTheDucCaoCapMBH'}">Xe đạp thể dục cao cấp MBH</a>
-          </li>
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thietBiTapTheLucMBHMvSeries'}">Thiết bị tập thể lực MBH - MV Series</a>
-          </li>
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'thietBiTapTheLucMBHMuSeries'}">Thiết bị tập thể lực MBH - MU Series</a>
-          </li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'mayChayBoMBHFitness'}">Máy chạy bộ MBH Fitness</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'xeDapMBHFitness'}">Xe đạp MHB Fitness</a></li>
-        </ol>
-      </li>
+        <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+          <a
+            >Thiết bị phòng gym <br />
+            MBH Fitness <i class="las la-angle-down la-sm"></i
+          ></a>
+          <ol class="sub-menu" aria-label="submenu">
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'thietBiTapTheLucMBHMoSeries' }"
+                >Thiết bị tập thể lực MBH - MO Series</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'thietBiTapTheLucMBHHSeries' }"
+                >Thiết bị tập thể lực MBH - H Series</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'thietBiTapTheLucMBHMaSeries' }"
+                >Thiết bị tập thể lực MBH - MA Series</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'thietBiTapTheLucMBHMTMSeries' }"
+                >Thiết bị tập thể lực MBH - MTM Series</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'xeDapTheDucCaoCapMBH' }"
+                >Xe đạp thể dục cao cấp MBH</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'thietBiTapTheLucMBHMvSeries' }"
+                >Thiết bị tập thể lực MBH - MV Series</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'thietBiTapTheLucMBHMuSeries' }"
+                >Thiết bị tập thể lực MBH - MU Series</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'mayChayBoMBHFitness' }"
+                >Máy chạy bộ MBH Fitness</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'xeDapMBHFitness' }"
+                >Xe đạp MHB Fitness</a
+              >
+            </li>
+          </ol>
+        </li>
 
-      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a
-          >Thiết bị phòng gym <br />
-          gia đình <i class="las la-angle-down la-sm"></i
-        ></a>
-        <ol class="sub-menu" aria-label="submenu">
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'xeDapTheDuc'}">Xe đạp thể dục</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'mayChayBo'}">Máy chạy bộ</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'mayRungToanThan'}">Máy rung toàn thân</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'mayTapBung'}">Máy tập bụng</a></li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'mayTruotTuyet'}">Máy trượt tuyết</a></li>
-        </ol>
-      </li>
+        <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+          <a
+            >Thiết bị phòng gym <br />
+            gia đình <i class="las la-angle-down la-sm"></i
+          ></a>
+          <ol class="sub-menu" aria-label="submenu">
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'xeDapTheDuc' }"
+                >Xe đạp thể dục</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'mayChayBo' }"
+                >Máy chạy bộ</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'mayRungToanThan' }"
+                >Máy rung toàn thân</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'mayTapBung' }"
+                >Máy tập bụng</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'mayTruotTuyet' }"
+                >Máy trượt tuyết</a
+              >
+            </li>
+          </ol>
+        </li>
 
-      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
-        <a
-          >Thiết bị phòng gym <br />
-          IMPULSE Fitness <i class="las la-angle-down la-sm"></i
-        ></a>
-        <ol class="sub-menu" aria-label="submenu">
-          <li class="menu-item">
-            <a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'gianTapImpulseSeriesIT9'}">Giàn tập IMPULSE Series IT9</a>
-          </li>
-          <li class="menu-item"><a
-            [routerLink]= "['/products']"
-            [queryParams]="{pageName:'mayKhoiPhongGym'}">Máy khối phòng gym</a></li>
-        </ol>
-      </li>
+        <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item" aria-haspopup="true">
+          <a
+            >Thiết bị phòng gym <br />
+            IMPULSE Fitness <i class="las la-angle-down la-sm"></i
+          ></a>
+          <ol class="sub-menu" aria-label="submenu">
+            <li class="menu-item">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ pageName: 'gianTapImpulseSeriesIT9' }"
+                >Giàn tập IMPULSE Series IT9</a
+              >
+            </li>
+            <li class="menu-item">
+              <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'mayKhoiPhongGym' }"
+                >Máy khối phòng gym</a
+              >
+            </li>
+          </ol>
+        </li>
 
-      <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item">
-        <a
-        [routerLink]= "['/products']"
-        [queryParams]="{pageName:'sanPhamMassage'}"
-          >Sản phẩm <br />
-          massage</a
-        >
-      </li>
-    </ol>
+        <li fxFlex="auto" fxFlex.lt-sm="30" class="menu-item">
+          <a (click)="hiddenSubMenu()" [routerLink]="['/products']" [queryParams]="{ pageName: 'sanPhamMassage' }"
+            >Sản phẩm <br />
+            massage</a
+          >
+        </li>
+      </ol>
     </div>
   </div>
 </div>
