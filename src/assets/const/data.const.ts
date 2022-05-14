@@ -352,9 +352,65 @@ const DATA = {
           'https://thientruongsport.com/upload/product/cum-xoay-eo-lung-bung-di-bo-tren-khong.png',
       },
       {
-        name: 'Cụm xe đạp- tay vai- xoay eo',
-        image: 'https://thientruongsport.com/upload/product/cum-xe-dap-tay-vai-xoay-eo.png',
+        name: 'Cụm xe đạp',
+        image: '/assets/images/cum-xe-dap.jpeg',
       },
+      {
+        name: 'Cụm xoay eo tay vai TR0003',
+        image: '/assets/images/TR0003.jpeg',
+      },
+      {
+        name: 'Cụm ba chức năng TR0015',
+        image: '/assets/images/TR0015.jpeg',
+      },
+      {
+        name: 'Dậm chân TR0013',
+        image: '/assets/images/TR0013.jpeg',
+      },
+      {
+        name: 'Đẩy vai chèo thuyền TR0008',
+        image: '/assets/images/TR0008.png',
+      },
+      {
+        name: 'Kéo tay đôi trụ đôi TR0012',
+        image: '/assets/images/TR0012.jpeg',
+      },
+      {
+        name: 'Lắc hông eo TR0004',
+        image: '/assets/images/TR0004.jpeg',
+      },
+      {
+        name: 'Máy tập đạp đùi',
+        image: '/assets/images/may-tap-dap-dui.jpeg',
+      },
+      {
+        name: 'Máy tập xoay eo TR0001',
+        image: '/assets/images/TR0001.jpeg',
+      },
+      {
+        name: 'Tập toàn thân TR0006',
+        image: '/assets/images/TR0006.png',
+      },
+      {
+        name: 'Xà đơn 2 bậc TR0005',
+        image: '/assets/images/TR0005.jpeg',
+      },
+      {
+        name: 'Xà đơn trụ đôi TR0010',
+        image: '/assets/images/TR0010.jpeg',
+      },
+      {
+        name: 'Xe đạp TR0002',
+        image: '/assets/images/TR0002.jpeg',
+      },
+      {
+        name: 'Xe đạp tựa lưng TR0007',
+        image: '/assets/images/TR0007.png',
+      },
+      {
+        name: 'Xoay eo đôi trụ đôi TR0011',
+        image: '/assets/images/TR0011.png',
+      }
     ],
   },
 
