@@ -1,14 +1,10 @@
 @import '/src/assets/variable.scss';
 
 .products-container {
-    .products-title {
-        margin: 0 1.6%;
-        padding: 10px 20px;
-        background: white;
-        border-radius: 5px;
-        box-shadow: 1px 1px $color-asbestos;
-    }
 
+    .card-img-top {
+        height: 250px;
+    }
 
     .products-pagination {
         ::ng-deep .pagination {

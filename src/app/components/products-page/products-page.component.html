@@ -11,46 +11,51 @@
     </div>
   </div>
   <div *ngIf="paginatedData.products.length > 0">
-    <div class="products-title products-pagination mb-2 justify-content-end" fxLayout="row wrap">
-      <div class="align-self-center mt-1 mb-1 mr-auto">
-        <h5 class="color-orange none-margin">
-          {{ paginatedData.name }}
-          <span *ngIf="searchName" class="inline-block color-asbestos"
-            >&ldquo;{{ searchName }}&rdquo; :</span
+    <div class="card mb-2">
+      <div class="card-body">
+        <div class="products-pagination justify-content-end" fxLayout="row wrap">
+
+        <div class="align-self-center mt-1 mb-1 mr-auto">
+          <h5 class="color-orange none-margin">
+            {{ paginatedData.name | uppercase }}
+            <span *ngIf="searchName" class="inline-block color-asbestos"
+              >&ldquo;{{ searchName }}&rdquo; :</span
+            >
+            &nbsp;
+            {{ totalItems }}
+            <span class="color-asbestos"> sản phẩm </span>
+          </h5>
+        </div>
+        <div class="mt-1 mb-1">
+          <pagination
+            [directionLinks]="false"
+            [totalItems]="totalItems"
+            [itemsPerPage]="itemsPerPage"
+            [(ngModel)]="currentPage"
+            (numPages)="(currentPage)"
+            (pageChanged)="pageChanged($event)"
           >
-          &nbsp;
-          {{ totalItems }}
-          <span class="color-asbestos"> sản phẩm </span>
-        </h5>
-      </div>
-      <div class="mt-1 mb-1">
-        <pagination
-          [directionLinks]="false"
-          [totalItems]="totalItems"
-          [itemsPerPage]="itemsPerPage"
-          [(ngModel)]="currentPage"
-          (numPages)="(currentPage)"
-          (pageChanged)="pageChanged($event)"
-        >
-        </pagination>
-      </div>
-      <div class="text-right justify-content-center mt-1 mb-1 ml-4">
-        <label class="none-margin" for="page">Số sản phẩm / 1 trang &nbsp;</label>
-        <select
-          class="pointer"
-          name="page"
-          id="page"
-          [(ngModel)]="itemsPerPage"
-          (change)="pageChanged()"
-        >
-          <option value="{{ itemsPerRow * 5 }}">{{ itemsPerRow * 5 }}</option>
-          <option value="{{ itemsPerRow * 10 }}">{{ itemsPerRow * 10 }}</option>
-          <option value="{{ itemsPerRow * 20 }}">{{ itemsPerRow * 20 }}</option>
-          <option value="{{ totalItems }}">Tất cả</option>
-        </select>
+          </pagination>
+        </div>
+        <div class="text-right justify-content-center mt-1 mb-1 ml-4">
+          <select
+            class="pointer"
+            name="page"
+            id="page"
+            [(ngModel)]="itemsPerPage"
+            (change)="pageChanged()"
+          >
+            <option value="{{ itemsPerRow * 5 }}">{{ itemsPerRow * 5 }} sp</option>
+            <option value="{{ itemsPerRow * 10 }}">{{ itemsPerRow * 10 }} sp</option>
+            <option value="{{ itemsPerRow * 20 }}">{{ itemsPerRow * 20 }} sp</option>
+            <option value="{{ totalItems }}">Tất cả</option>
+          </select>
+          <label class="none-margin" for="page">&nbsp;| trang</label>
+        </div>
+        </div>
       </div>
     </div>
-    <div fxLayout="row wrap">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between">
       <div *ngFor="let product of paginatedData.products" class="card" style="width: 18rem;"
       fxFlex="32"
       fxFlex.lt-md="48"

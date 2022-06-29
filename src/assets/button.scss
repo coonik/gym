@@ -1,0 +1,7 @@
+@import './variable.scss';
+
+.btn-warning-custom {
+    color: $color-clouds;
+    border-color: $color-orange;
+    background: $color-orange;
+}

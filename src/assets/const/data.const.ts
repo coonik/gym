@@ -152,7 +152,7 @@ const DATA = {
   },
 
   thietBiTheThaoCongVienCaoCap: {
-    name: 'Thiết bị thể thao công viên cao cấp td',
+    name: 'Thiết bị thể thao công viên cao cấp',
     products: [
       {
         name: 'Máy tập đẩy tay đôi TD08',
