@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CommonModule } from '@angular/common';
-import FooterComponent from '../footer/footer.component';
-import HeaderComponent from './header.component';
+import FooterComponent from './components/footer/footer.component';
+import HeaderComponent from './components/header/header.component';
 
 const modules = [FlexLayoutModule, CollapseModule, RouterModule];
 const components = [HeaderComponent, FooterComponent];
