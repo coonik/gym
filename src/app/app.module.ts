@@ -10,9 +10,11 @@ import HomePageComponent from './components/home-page/home-page.component';
 import SharedModule from './shared/shared.module';
 import AppComponent from './app.component';
 import ProductsPageComponent from './components/products-page/products-page.component';
+import ProductDetailPageComponent from './components/product-detail-page/product-detail-page.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, ProductsPageComponent],
+  declarations: [AppComponent, HomePageComponent, ProductsPageComponent, ProductDetailPageComponent, ProductsComponent],
   imports: [
     SharedModule,
     BrowserModule,

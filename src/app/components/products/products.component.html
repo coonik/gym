@@ -1,0 +1,22 @@
+<div class="product-container" fxLayout="row wrap" fxLayoutAlign="space-between">
+  <div
+    *ngFor="let product of products"
+    class="card"
+    style="width: 18rem"
+    fxFlex="32"
+    fxFlex.lt-md="48"
+    fxFlex.lt-sm="96"
+  >
+    <img [src]="product.image" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <a
+        [routerLink]="['/detail']"
+        [queryParams]="{ searchName: product.name }"
+        class="btn btn-primary"
+        >Chi tiết</a
+      >
+    </div>
+  </div>
+</div>

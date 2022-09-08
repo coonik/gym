@@ -1,0 +1,6 @@
+.product-detail-card {
+    max-height: 40vh;
+    .card-body {
+        overflow: auto;
+    }
+}

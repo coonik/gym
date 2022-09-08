@@ -1,11 +1,6 @@
 @import '/src/assets/variable.scss';
 
 .products-container {
-
-    .card-img-top {
-        height: 250px;
-    }
-
     .products-pagination {
         ::ng-deep .pagination {
             justify-content: flex-end;

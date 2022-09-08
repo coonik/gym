@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
+import { Subject } from 'rxjs';
 import DATA from 'src/assets/const/data.const';
-import IData from 'src/assets/interface/data.interface';
+import IData, { IBigData } from 'src/assets/interface/data.interface';
 import IProduct from 'src/assets/interface/product.interface';
 import IProductsParams from 'src/assets/interface/products-params.interface';
 
@@ -10,22 +12,26 @@ import IProductsParams from 'src/assets/interface/products-params.interface';
   templateUrl: './products-page.component.html',
   styleUrls: ['./products-page.component.scss'],
 })
-class ProductsPageComponent implements OnInit {
-  private data: IData;
+class ProductsPageComponent implements OnInit, OnDestroy {
+  private data!: IData;
 
-  public searchName: string;
+  public searchName: string | undefined;
 
-  public paginatedData: IData;
+  public paginatedData!: IData;
 
-  public totalItems: number;
+  public totalItems!: number;
 
   public currentPage = 1;
 
-  public itemsPerPage: number;
+  public itemsPerPage!: number;
 
-  public itemsPerRow: number;
+  public itemsPerRow!: number;
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  private onDestroy$ = new Subject();
+
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     const deviceWidth = window.outerWidth;
@@ -35,39 +41,15 @@ class ProductsPageComponent implements OnInit {
       this.itemsPerRow = 1;
     }
     this.itemsPerPage = this.itemsPerRow * 10;
-
-    this.activatedRoute.queryParams.subscribe((params: IProductsParams) => {
-      this.searchName = params.searchName === '' ? 'Rỗng' : params.searchName;
-      if (this.searchName) {
-        let dataTemp: IProduct[] = [];
-        Object.keys(DATA).forEach((key) => {
-          dataTemp = [
-            ...dataTemp,
-            ...(DATA[`${key}`].products as IProduct[]).filter((product) =>
-              this.convertViToEn(product.name).match(this.convertViToEn(this.searchName)),
-            ),
-          ];
-        });
-
-        this.data = {
-          name: 'Kết quả tìm kiếm cho',
-          products: dataTemp,
-        };
-      } else {
-        this.data = params.pageName
-          ? DATA[`${params.pageName}`]
-          : {
-              name: 'Không tìm thấy trang',
-              products: [],
-            };
-      }
-
-      this.totalItems = this.data.products.length;
-      this.pageChanged();
-    });
+    this.routeChangeEvent();
   }
 
-  public pageChanged(event?): void {
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
+  }
+
+  public pageChanged(event?: PageChangedEvent): void {
     if (event) {
       this.currentPage = event.page;
     }
@@ -99,6 +81,37 @@ class ProductsPageComponent implements OnInit {
         .replace(/\s/g, '')
     );
   };
+  private routeChangeEvent(): void {
+    this.activatedRoute.queryParams.subscribe((params: IProductsParams) => {
+      this.searchName = params.searchName === '' ? 'Rỗng' : params.searchName;
+      if (this.searchName) {
+        let dataTemp: IProduct[] = [];
+        Object.keys(DATA).forEach((key: string) => {
+          dataTemp = [
+            ...dataTemp,
+            ...(DATA[key as keyof IBigData].products as IProduct[]).filter((product) =>
+              this.convertViToEn(product.name).match(this.convertViToEn(this.searchName!)),
+            ),
+          ];
+        });
+
+        this.data = {
+          name: 'Kết quả tìm kiếm cho',
+          products: dataTemp,
+        };
+      } else {
+        this.data = params.pageName
+          ? DATA[params.pageName as keyof IBigData]
+          : {
+              name: 'Không tìm thấy trang',
+              products: [],
+            };
+      }
+
+      this.totalItems = this.data.products.length;
+      this.pageChanged();
+    });
+  }
 }
 
 export default ProductsPageComponent;

@@ -1,0 +1,21 @@
+<div
+  class="card product-detail-card"
+  fxLayout="row"
+>
+  <img fxFlex="40" [src]="product.image" class="card-img-top" alt="..." />
+  <div fxFlex class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <h6 class="card-text">Giới thiệu chung</h6>
+    <p class="card-text" [innerText]="commonDescription"></p>
+    <h6 class="card-text">Chi tiết</h6>
+    <p class="card-text" [innerText]="product.detail"></p>
+  </div>
+</div>
+<div class="mt-2">
+  <h4>
+    Có thể bạn quan tâm
+  </h4>
+  <app-products
+    [products]="randomProducts"
+  ></app-products>
+</div>

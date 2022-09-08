@@ -55,19 +55,9 @@
         </div>
       </div>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="space-between">
-      <div *ngFor="let product of paginatedData.products" class="card" style="width: 18rem;"
-      fxFlex="32"
-      fxFlex.lt-md="48"
-      fxFlex.lt-sm="96">
-        <img [src]="product.image" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+    <app-products
+      [products]="paginatedData.products"
+    ></app-products>
     <!-- <div class="products" fxLayout="row wrap">
       <div
         class="pointer text-center"

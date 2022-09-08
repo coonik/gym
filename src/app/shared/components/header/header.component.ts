@@ -9,7 +9,7 @@ import { NavigationEnd, Router } from '@angular/router';
 export default class HeaderComponent {
   public isCollapsed = window.outerWidth < 600;
 
-  public searchName: string;
+  public searchName = '';
 
   constructor(private router: Router) {
     router.events.subscribe((event) => {
@@ -26,7 +26,7 @@ export default class HeaderComponent {
 
     if (search) {
       setTimeout(() => {
-        document.getElementById('search').click();
+        document.getElementById('search')?.click();
       }, 0);
     }
   }
