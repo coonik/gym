@@ -1,13 +1,25 @@
 @import "/src/assets/variable.scss";
 
 .footer-container {
+  z-index: 2;
   padding: 20px 2vw;
-  color: $color-clouds;
-  background: $color-silver;
-
+  position: relative;
+  color: $color-silver;
   hr {
     width: 30%;
     margin: 10px 0;
+  }
+  .footer-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://vinmec-prod.s3.amazonaws.com/images/20200416_073802_523277_tapgym.max-800x800.jpg");
+    background-size: cover;
+    background-position: bottom;
+    filter: brightness(40%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 
   >:last-child {
@@ -21,7 +33,7 @@
 
   ::ng-deep .popover {
     max-width: 600px;
-    background: $color-clouds;
+    background: $color-pumpkin;
 
     .popover-header {
       background-color: $color-orange;
