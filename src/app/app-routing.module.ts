@@ -5,10 +5,10 @@ import ProductDetailPageComponent from './components/product-detail-page/product
 import ProductsPageComponent from './components/products-page/products-page.component';
 
 export const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
   { path: 'products', component: ProductsPageComponent },
   { path: 'detail', component: ProductDetailPageComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'products', pathMatch: 'full' },
 ];
 
 @NgModule({

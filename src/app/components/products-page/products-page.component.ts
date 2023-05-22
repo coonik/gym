@@ -100,17 +100,24 @@ class ProductsPageComponent implements OnInit, OnDestroy {
           products: dataTemp,
         };
       } else {
-        this.data = params.pageName
-          ? DATA[params.pageName as keyof IBigData]
-          : {
-              name: 'Không tìm thấy trang',
-              products: [],
-            };
+        this.data = this.getDataByPageName(params.pageName as keyof IBigData | undefined);
       }
 
       this.totalItems = this.data.products.length;
       this.pageChanged();
     });
+  }
+
+  private getDataByPageName(pageName: keyof IBigData | undefined): IData {
+    if (!pageName) {
+      const products: IProduct[] = Object.keys(DATA).map(key => (DATA[key as keyof IBigData].products as IProduct[])).flat();
+      return {
+        name: 'Tất cả sản phẩm',
+        products
+      }
+    }
+
+    return DATA[pageName as keyof IBigData];
   }
 }
 
